@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="warp" >
+        {{ warpDom }}
+        <div class="name">
+            {{ nameDom }}
+        </div>
+        <div class="show-box"   v-if="flag" >
+            {{ showDom }}
+        </div>
+        <ul>
+            <li v-for="(v,k) in list" >
+                {{ k + " : " + v.valueDom }}
+            </li>
+        </ul>
+
+        <div v-bind:class="activeClass" >
+            我是class 与 style  
+        </div>
+
+        <div v-bind:class="[activeClass, comeClass]" >
+                我是class 与 style  数组
+        </div>
+
+        <div v-bind:class="{activeClass, comeClass}" >
+                我是class 与 style  对象 
+        </div>
+
+        <div 
+            class="my-footer"
+            v-on:click="handleAddClick"
+        >
+            {{ master }}
+        </div>
+        <input v-model="inputMes" ><span> {{ inputMes }} </span>
+
+
+
+
+    </div>
+    
+</body>
+
+<script type="text/javascript" src="js/vue.js" ></script>
+<script type="text/javascript" src="js/index.js" ></script>
+
+</html>
